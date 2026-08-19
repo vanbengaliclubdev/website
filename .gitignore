@@ -1,0 +1,16 @@
+# Environment and deployment secrets
+.env
+.env.*
+!.env.example
+/config/
+
+# Database exports and runtime-generated content
+/database/
+/uploads/
+
+# Server-side archives and backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+

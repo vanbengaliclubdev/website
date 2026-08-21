@@ -6,17 +6,19 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
 // =====================================================
+// ERROR REPORTING
+// =====================================================
+
+error_reporting(E_ALL);
+ini_set('display_errors', '0');
+
+// =====================================================
 // PHPMailer
 // =====================================================
 
-// If you installed PHPMailer manually:
-require __DIR__ . 'PHPMailer/src/Exception.php';
-require __DIR__ . 'PHPMailer/src/PHPMailer.php';
-require __DIR__ . 'PHPMailer/src/SMTP.php';
-
-// If using Composer instead, use this:
-// require __DIR__ . '/vendor/autoload.php';
-
+require __DIR__ . '/PHPMailer/src/Exception.php';
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
 
 // =====================================================
 // ONLY ALLOW POST REQUEST
@@ -24,36 +26,19 @@ require __DIR__ . 'PHPMailer/src/SMTP.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    exit('Method Not Allowed');
-}
-
-
-// =====================================================
-// HELPER FUNCTIONS
-// =====================================================
-
-function clean_input(string $value): string
-{
-    return trim(strip_tags($value));
-}
-
-function redirect_with_status(string $status): void
-{
-    header('Location: contact.php?status=' . urlencode($status));
+    echo 'Invalid request method.';
     exit;
 }
-
 
 // =====================================================
 // GET FORM DATA
 // =====================================================
 
-$name = clean_input($_POST['name'] ?? '');
+$name = trim($_POST['name'] ?? '');
 $email = trim($_POST['email'] ?? '');
-$phone = clean_input($_POST['phone'] ?? '');
-$subject = clean_input($_POST['subject'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$subject = trim($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
-
 
 // =====================================================
 // VALIDATION
@@ -61,97 +46,67 @@ $message = trim($_POST['message'] ?? '');
 
 // Name
 if ($name === '') {
-    redirect_with_status('name_required');
+    http_response_code(400);
+    echo 'Please enter your name.';
+    exit;
 }
 
-if (mb_strlen($name) < 2 || mb_strlen($name) > 100) {
-    redirect_with_status('invalid_name');
+if (mb_strlen($name) < 2) {
+    http_response_code(400);
+    echo 'Please enter a valid name.';
+    exit;
 }
-
 
 // Email
 if ($email === '') {
-    redirect_with_status('email_required');
+    http_response_code(400);
+    echo 'Please enter your email address.';
+    exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    redirect_with_status('invalid_email');
+    http_response_code(400);
+    echo 'Please enter a valid email address.';
+    exit;
 }
 
-
-// Phone - optional
+// Phone - optional, but validate if entered
 if ($phone !== '') {
 
-    // Allows +, numbers, spaces, -, (, )
-    if (!preg_match('/^[0-9+\-\s()]{7,20}$/', $phone)) {
-        redirect_with_status('invalid_phone');
+    $cleanPhone = preg_replace('/[^0-9+\-\s()]/', '', $phone);
+
+    if ($cleanPhone !== $phone) {
+        http_response_code(400);
+        echo 'Please enter a valid phone number.';
+        exit;
     }
 }
 
-
-// Subject - optional
-if ($subject !== '' && mb_strlen($subject) > 200) {
-    redirect_with_status('invalid_subject');
-}
-
-
 // Message
 if ($message === '') {
-    redirect_with_status('message_required');
+    http_response_code(400);
+    echo 'Please enter your message.';
+    exit;
 }
 
-if (mb_strlen($message) < 10) {
-    redirect_with_status('short_message');
+if (mb_strlen($message) < 5) {
+    http_response_code(400);
+    echo 'Please enter a meaningful message.';
+    exit;
 }
 
-if (mb_strlen($message) > 5000) {
-    redirect_with_status('long_message');
-}
-
-
 // =====================================================
-// BASIC ANTI-SPAM CHECK
+// SANITIZE SUBJECT
 // =====================================================
 
-// Block suspicious header injection attempts
-$combinedInput = $name . ' ' . $email . ' ' . $subject . ' ' . $message;
+$subject = $subject !== ''
+    ? $subject
+    : 'New Contact Form Enquiry';
 
-if (
-    preg_match('/[\r\n]/', $email) ||
-    preg_match('/[\r\n]/', $subject)
-) {
-    redirect_with_status('invalid_input');
-}
-
+$subject = preg_replace('/[\r\n]+/', ' ', $subject);
 
 // =====================================================
-// SMTP CONFIGURATION
-// =====================================================
-
-$smtpHost = 'mail.vancouverbengaliclub.com';
-
-$smtpUsername = 'YOUR_EMAIL@vancouverbengaliclub.com';
-
-$smtpPassword = 'YOUR_EMAIL_PASSWORD';
-
-$smtpPort = 587;
-
-
-// =====================================================
-// EMAIL CONFIGURATION
-// =====================================================
-
-// Where you want to receive enquiries
-$adminEmail = 'YOUR_RECEIVING_EMAIL@gmail.com';
-
-// Sender email should normally be the same SMTP account
-$fromEmail = $smtpUsername;
-
-$fromName = 'Vancouver Bengali Club';
-
-
-// =====================================================
-// CREATE PHPMailer
+// CREATE PHPMailer OBJECT
 // =====================================================
 
 $mail = new PHPMailer(true);
@@ -164,17 +119,34 @@ try {
 
     $mail->isSMTP();
 
-    $mail->Host = $smtpHost;
+    /*
+     * -------------------------------------------------
+     * OPTION 1: GMAIL SMTP
+     * -------------------------------------------------
+     *
+     * Host: smtp.gmail.com
+     * Port: 587
+     * Encryption: STARTTLS
+     *
+     * Use a Gmail APP PASSWORD, NOT your normal password.
+     */
 
+    $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
 
-    $mail->Username = $smtpUsername;
+    // CHANGE THIS
+    $mail->Username = 'YOUR_GMAIL@gmail.com';
 
-    $mail->Password = $smtpPassword;
+    // CHANGE THIS
+    $mail->Password = 'YOUR_16_DIGIT_APP_PASSWORD';
 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-    $mail->Port = $smtpPort;
+
+    // =================================================
+    // CHARACTER SET
+    // =================================================
 
     $mail->CharSet = 'UTF-8';
 
@@ -183,18 +155,25 @@ try {
     // SENDER
     // =================================================
 
+    /*
+     * IMPORTANT:
+     * For Gmail SMTP, use the same Gmail address
+     * that you used in $mail->Username.
+     */
+
     $mail->setFrom(
-        $fromEmail,
-        $fromName
+        'YOUR_GMAIL@gmail.com',
+        'Vancouver Bengali Club Website'
     );
 
 
     // =================================================
-    // ADMIN / WEBSITE OWNER
+    // RECEIVER
     // =================================================
 
+    // CHANGE THIS TO YOUR RECEIVING EMAIL
     $mail->addAddress(
-        $adminEmail,
+        'YOUR_RECEIVING_EMAIL@gmail.com',
         'Vancouver Bengali Club'
     );
 
@@ -210,19 +189,21 @@ try {
 
 
     // =================================================
+    // EMAIL FORMAT
+    // =================================================
+
+    $mail->isHTML(true);
+
+
+    // =================================================
     // EMAIL SUBJECT
     // =================================================
 
-    $emailSubject = $subject !== ''
-        ? 'Website Enquiry: ' . $subject
-        : 'New Website Enquiry';
-
-
-    $mail->Subject = $emailSubject;
+    $mail->Subject = $subject;
 
 
     // =================================================
-    // HTML EMAIL
+    // ESCAPE USER INPUT
     // =================================================
 
     $safeName = htmlspecialchars(
@@ -244,7 +225,7 @@ try {
     );
 
     $safeSubject = htmlspecialchars(
-        $subject !== '' ? $subject : 'Not provided',
+        $subject,
         ENT_QUOTES,
         'UTF-8'
     );
@@ -258,79 +239,157 @@ try {
     );
 
 
-    $mail->isHTML(true);
+    // =================================================
+    // HTML EMAIL
+    // =================================================
 
     $mail->Body = '
     <!DOCTYPE html>
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>New Website Enquiry</title>
+        <title>New Contact Form Enquiry</title>
     </head>
 
     <body style="
         margin:0;
-        padding:20px;
+        padding:0;
         background:#f5f5f5;
         font-family:Arial,Helvetica,sans-serif;
     ">
 
         <div style="
             max-width:650px;
-            margin:auto;
+            margin:30px auto;
             background:#ffffff;
-            border-radius:8px;
-            overflow:hidden;
             border:1px solid #e5e5e5;
         ">
 
             <div style="
-                background:#003b66;
-                color:#ffffff;
-                padding:22px;
+                background:#003f68;
+                padding:25px;
+                text-align:center;
             ">
-                <h2 style="margin:0;">
-                    New Website Enquiry
+                <h2 style="
+                    color:#ffffff;
+                    margin:0;
+                    font-size:24px;
+                ">
+                    New Contact Form Enquiry
                 </h2>
             </div>
 
-            <div style="padding:25px;">
+            <div style="padding:30px;">
 
-                <p>
-                    <strong>Name:</strong><br>
-                    ' . $safeName . '
+                <p style="font-size:16px;">
+                    You have received a new enquiry from your website.
                 </p>
 
-                <p>
-                    <strong>Email:</strong><br>
-                    ' . $safeEmail . '
-                </p>
+                <table
+                    width="100%"
+                    cellpadding="10"
+                    cellspacing="0"
+                    style="
+                        border-collapse:collapse;
+                        margin-top:20px;
+                    "
+                >
 
-                <p>
-                    <strong>Phone:</strong><br>
-                    ' . $safePhone . '
-                </p>
+                    <tr>
+                        <td style="
+                            font-weight:bold;
+                            border-bottom:1px solid #eeeeee;
+                            width:30%;
+                        ">
+                            Name
+                        </td>
 
-                <p>
-                    <strong>Subject:</strong><br>
-                    ' . $safeSubject . '
-                </p>
+                        <td style="
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            ' . $safeName . '
+                        </td>
+                    </tr>
 
-                <p>
-                    <strong>Message:</strong><br>
-                    ' . $safeMessage . '
-                </p>
+                    <tr>
+                        <td style="
+                            font-weight:bold;
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            Email
+                        </td>
+
+                        <td style="
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            ' . $safeEmail . '
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="
+                            font-weight:bold;
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            Phone
+                        </td>
+
+                        <td style="
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            ' . $safePhone . '
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="
+                            font-weight:bold;
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            Subject
+                        </td>
+
+                        <td style="
+                            border-bottom:1px solid #eeeeee;
+                        ">
+                            ' . $safeSubject . '
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div style="
+                    margin-top:25px;
+                ">
+
+                    <h3 style="
+                        color:#003f68;
+                        margin-bottom:10px;
+                    ">
+                        Message
+                    </h3>
+
+                    <div style="
+                        background:#f8f8f8;
+                        padding:20px;
+                        line-height:1.6;
+                        border-left:4px solid #003f68;
+                    ">
+                        ' . $safeMessage . '
+                    </div>
+
+                </div>
 
             </div>
 
             <div style="
-                background:#f7f7f7;
-                padding:15px 25px;
-                font-size:12px;
-                color:#666;
+                background:#f5f5f5;
+                padding:15px;
+                text-align:center;
+                font-size:13px;
+                color:#777777;
             ">
-                This enquiry was submitted through
-                Vancouver Bengali Club website.
+                This email was sent from the Vancouver Bengali Club website contact form.
             </div>
 
         </div>
@@ -345,36 +404,39 @@ try {
     // =================================================
 
     $mail->AltBody =
-        "New Website Enquiry\n\n" .
+        "New Contact Form Enquiry\n\n" .
         "Name: " . $name . "\n" .
         "Email: " . $email . "\n" .
-        "Phone: " . ($phone ?: 'Not provided') . "\n" .
-        "Subject: " . ($subject ?: 'Not provided') . "\n\n" .
-        "Message:\n" . $message;
+        "Phone: " . ($phone !== '' ? $phone : 'Not provided') . "\n" .
+        "Subject: " . $subject . "\n\n" .
+        "Message:\n" .
+        $message;
 
 
     // =================================================
-    // SEND
+    // SEND EMAIL
     // =================================================
 
     $mail->send();
 
 
     // =================================================
-    // SUCCESS
+    // SUCCESS RESPONSE
     // =================================================
 
-    redirect_with_status('success');
-
+    echo 'success';
 
 } catch (Exception $e) {
 
-    // Do not expose SMTP credentials or technical errors
-    // to the visitor.
+    // =================================================
+    // ERROR RESPONSE
+    // =================================================
 
     error_log(
-        'VBC Contact Form Error: ' . $mail->ErrorInfo
+        'PHPMailer Error: ' . $mail->ErrorInfo
     );
 
-    redirect_with_status('error');
+    http_response_code(500);
+
+    echo 'Unable to send your message right now. Please try again later.';
 }

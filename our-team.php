@@ -28,28 +28,7 @@
 <body>
 <?php include_once 'include/header.php'; ?>
 
-<!-- Breadcrumb / Page Hero -->
-<section class="page-breadcrumb">
-    <div class="breadcrumb-overlay"></div>
-
-    <div class="breadcrumb-container">
-
-        <div class="breadcrumb-content">
-
-            <span class="breadcrumb-label">Our Team</span>
-
-            <h1>Our Team</h1>
-
-            <div class="breadcrumb-path">
-                <a href="index.php">Home</a>
-                <span>/</span>
-                <span>Our Team</span>
-            </div>
-
-        </div>
-
-    </div>
-</section>
+<?php include_once __DIR__ . '/include/breadcrumb.php'; ?>
 
 <main id="home">
   <!-- Leadership -->

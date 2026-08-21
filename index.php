@@ -40,7 +40,6 @@
           <div class="col-lg-6">
             <div class="hero-copy">
               <h1 class="hero-title">Building a<br>Healthier, Stronger<br>Community</h1>
-              <p class="hero-lead">Creating opportunities for wellness, connection,<br class="d-none d-md-block"> and support for all.</p>
               <div class="hero-actions">
                 <a class="btn btn-brand hero-btn" href="#programs">Our Programs <i class="fa-solid fa-arrow-right"></i></a>
                 <a class="btn btn-outline-brand hero-btn" href="#volunteers">Get Involved <i class="fa-solid fa-arrow-right"></i></a>
@@ -86,7 +85,6 @@
       <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-5">
-            <div class="section-kicker">About us</div>
             <h2 class="section-title">A community where everyone can <em>thrive.</em></h2>
             <div class="accent-rule"></div>
             <p class="section-text">
@@ -96,184 +94,39 @@
           </div>
 
           <div class="col-lg-7">
-            <div class="mission-panel">
-              <div class="mission-stat">
-                <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
-                <strong class="counter" data-target="7">0</strong>
-                <span>Core values</span>
-              </div>
-              <div class="mission-stat">
-                <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <strong class="counter" data-target="7">0</strong>
-                <span>Program areas</span>
-              </div>
-              <div class="mission-stat">
-                <div class="stat-icon"><i class="fa-solid fa-earth-americas"></i></div>
-                <strong>BC</strong>
-                <span>Community focus</span>
-              </div>
-              <div class="mission-values">
-                <span>Community</span><span>Volunteerism</span><span>Integrity</span>
-                <span>Transparency</span><span>Inclusion</span><span>Respect</span><span>Service</span>
-              </div>
-            </div>
+          <img src="/assets/imag-1.jpeg" alt="" class="w-100 rounded">
           </div>
         </div>
       </div>
     </section>
-    
-    
-    <!-- =========================
-     Health & Wellness Section
-========================= -->
-<section class="community-visual-section">
-    <div class="community-container">
 
-        <div class="community-image-grid">
-
-            <!-- Image 1 -->
-            <div class="community-image-card">
-                <img 
-                    src="assets/imag-1.jpeg" 
-                    alt="Health, Sports and Community Activities"
-                    loading="lazy"
-                >
-            </div>
-
-            <!-- Image 2 -->
-            <div class="community-image-card">
-                <img 
-                    src="assets/image-2.jpeg" 
-                    alt="Health, Wellness, Sports and Charity"
-                    loading="lazy"
-                >
-            </div>
-
+    <!-- Gallery -->
+    <section class="section-padding gallery-section" id="gallery">
+      <div class="container">
+        <div class="row align-items-end g-3 mb-4">
+          <div class="col-lg-7">
+            <h2 class="section-title mb-0">Community in <em>motion.</em></h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <p class="section-subtitle mb-0">A flexible gallery area for sports, charity, community, seniors, youth and cultural events.</p>
+          </div>
         </div>
 
-    </div>
-</section>
-
-<style>
-/* =========================
-   Section
-========================= */
-.community-visual-section {
-    width: 100%;
-    padding: 70px 20px;
-    background: var(--vb-cream-2);
-    box-sizing: border-box;
-}
-
-/* =========================
-   Container
-========================= */
-.community-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* =========================
-   Image Grid
-========================= */
-.community-image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    width: 100%;
-}
-
-/* =========================
-   Image Card
-========================= */
-.community-image-card {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 18px;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================
-   Images
-========================= */
-.community-image-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-/* Hover Effect */
-.community-image-card:hover img {
-    transform: scale(1.03);
-}
-
-/* =========================
-   Tablet
-========================= */
-@media (max-width: 991px) {
-
-    .community-visual-section {
-        padding: 55px 18px;
-    }
-
-    .community-image-grid {
-        gap: 20px;
-    }
-
-    .community-image-card {
-        border-radius: 14px;
-    }
-}
-
-/* =========================
-   Mobile
-========================= */
-@media (max-width: 767px) {
-
-    .community-visual-section {
-        padding: 40px 15px;
-    }
-
-    .community-image-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .community-image-card {
-        border-radius: 12px;
-    }
-
-    .community-image-card img {
-        aspect-ratio: 16 / 9;
-    }
-}
-
-/* =========================
-   Small Mobile
-========================= */
-@media (max-width: 480px) {
-
-    .community-visual-section {
-        padding: 30px 12px;
-    }
-
-    .community-image-grid {
-        gap: 15px;
-    }
-}
-</style>
+        <div class="gallery-grid">
+          <a href="#gallery" class="gallery-item gallery-large g1"><span><i class="fa-regular fa-images"></i> Community</span></a>
+          <a href="#gallery" class="gallery-item g2"><span><i class="fa-solid fa-person-running"></i> Sports</span></a>
+          <a href="#gallery" class="gallery-item g3"><span><i class="fa-solid fa-hands-holding-circle"></i> Charity</span></a>
+          <a href="#gallery" class="gallery-item g4"><span><i class="fa-solid fa-children"></i> Youth</span></a>
+          <a href="#gallery" class="gallery-item g5"><span><i class="fa-solid fa-music"></i> Culture</span></a>
+          <a href="#gallery" class="gallery-item gallery-wide g6"><span><i class="fa-solid fa-user-group"></i> Seniors</span></a>
+        </div>
+      </div>
+    </section>    
     
-
     <!-- Programs -->
     <section class="section-padding programs-section" id="programs">
       <div class="container">
         <div class="text-center section-heading">
-          <div class="section-kicker">What We Do</div>
           <h2 class="section-title">Programs built around <em>people.</em></h2>
           <p class="section-subtitle">
             Creating accessible opportunities to participate, contribute and thrive at every stage of life.
@@ -367,7 +220,7 @@
     <section class="section-padding leadership-section">
       <div class="container">
         <div class="text-center section-heading">
-          <div class="section-kicker">Our Leadership</div>
+          <!--<div class="section-kicker">Our Leadership</div>-->
           <h2 class="section-title">Our  <em>Team</em></h2>
           <p class="section-subtitle">Professional profile cards are ready for board photos, biographies and official emails.</p>
         </div>
@@ -417,8 +270,8 @@
       <div class="container">
         <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 section-heading-row">
           <div>
-            <div class="section-kicker">Join Us</div>
-            <h2 class="section-title mb-0">Upcoming <em>events.</em></h2>
+            <!--<div class="section-kicker">Join Us</div>-->
+            <h2 class="section-title mb-0"><em>Events</em></h2>
           </div>
           <a href="#contact" class="text-link">View event calendar <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -474,7 +327,7 @@
     <section class="section-padding news-section" id="news">
       <div class="container">
         <div class="text-center section-heading">
-          <div class="section-kicker">Stay Connected</div>
+          <!--<div class="section-kicker">Stay Connected</div>-->
           <h2 class="section-title">Latest <em>news.</em></h2>
           <p class="section-subtitle">Dynamic news and blog cards can be connected to your CMS after launch.</p>
         </div>
@@ -517,35 +370,13 @@
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section-padding gallery-section" id="gallery">
-      <div class="container">
-        <div class="row align-items-end g-3 mb-4">
-          <div class="col-lg-7">
-            <div class="section-kicker">Moments Together</div>
-            <h2 class="section-title mb-0">Community in <em>motion.</em></h2>
-          </div>
-          <div class="col-lg-5 text-lg-end">
-            <p class="section-subtitle mb-0">A flexible gallery area for sports, charity, community, seniors, youth and cultural events.</p>
-          </div>
-        </div>
 
-        <div class="gallery-grid">
-          <a href="#gallery" class="gallery-item gallery-large g1"><span><i class="fa-regular fa-images"></i> Community</span></a>
-          <a href="#gallery" class="gallery-item g2"><span><i class="fa-solid fa-person-running"></i> Sports</span></a>
-          <a href="#gallery" class="gallery-item g3"><span><i class="fa-solid fa-hands-holding-circle"></i> Charity</span></a>
-          <a href="#gallery" class="gallery-item g4"><span><i class="fa-solid fa-children"></i> Youth</span></a>
-          <a href="#gallery" class="gallery-item g5"><span><i class="fa-solid fa-music"></i> Culture</span></a>
-          <a href="#gallery" class="gallery-item gallery-wide g6"><span><i class="fa-solid fa-user-group"></i> Seniors</span></a>
-        </div>
-      </div>
-    </section>
 
     <!-- Sponsors -->
     <section class="section-padding sponsors-section" id="sponsors">
       <div class="container">
         <div class="text-center section-heading">
-          <div class="section-kicker">Our Partners</div>
+          <!--<div class="section-kicker">Our Partners</div>-->
           <h2 class="section-title">Stronger <em>together.</em></h2>
           <p class="section-subtitle">VBCCS values partnerships with businesses and community organizations that support our mission.</p>
         </div>
@@ -719,7 +550,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="section-kicker">Volunteer With Us</div>
+            <!--<div class="section-kicker">Volunteer With Us</div>-->
             <h2 class="section-title">Volunteers are the <em>heart</em> of VBCCS.</h2>
             <p class="section-text">
               We welcome individuals who are passionate about community service, sports,
@@ -742,7 +573,7 @@
       <div class="container">
         <div class="membership-inner">
           <div>
-            <div class="section-kicker">Get Involved</div>
+            <!--<div class="section-kicker">Get Involved</div>-->
             <h2>Become part of something <em>meaningful.</em></h2>
           </div>
           <div class="d-flex flex-wrap gap-3">
@@ -758,7 +589,7 @@
       <div class="container">
         <div class="row g-5">
           <div class="col-lg-5">
-            <div class="section-kicker">Get In Touch</div>
+            <!--<div class="section-kicker">Get In Touch</div>-->
             <h2 class="section-title">Let's build a better <em>community.</em></h2>
             <p class="section-text">
               Questions, partnerships, volunteering or membership enquiries? Send us a message

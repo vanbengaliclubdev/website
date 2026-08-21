@@ -1,5 +1,5 @@
+---
 deployment:
   tasks:
     - export DEPLOYPATH=/home4/vancouverbengali/web.vancouverbengaliclub.com/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH
+    - /usr/bin/find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec /bin/cp -R {} $DEPLOYPATH \;

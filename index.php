@@ -56,28 +56,55 @@
     </section>
 
     <!-- Reference-style feature strip -->
-    <section class="reference-features" aria-label="Our focus areas">
-      <div class="container">
-        <div class="reference-feature-grid">
-          <div class="reference-feature-item">
-            <div class="reference-feature-icon icon-yellow"><i class="fa-solid fa-heart-pulse"></i></div>
-            <div><h3>Health &amp; Wellness</h3><p>Promoting physical and mental well-being for individuals and families.</p></div>
-          </div>
-          <div class="reference-feature-item">
-            <div class="reference-feature-icon icon-green"><i class="fa-solid fa-people-group"></i></div>
-            <div><h3>Community Support</h3><p>Providing help and resources to strengthen and uplift our community.</p></div>
-          </div>
-          <div class="reference-feature-item">
-            <div class="reference-feature-icon icon-blue"><i class="fa-solid fa-book-open"></i></div>
-            <div><h3>Education &amp; Awareness</h3><p>Raising awareness and offering learning opportunities for a better tomorrow.</p></div>
-          </div>
-          <div class="reference-feature-item">
-            <div class="reference-feature-icon icon-sky"><i class="fa-solid fa-hand-holding-heart"></i></div>
-            <div><h3>Charitable Initiatives</h3><p>Serving those in need through charitable programs and compassionate action.</p></div>
-          </div>
+  <section class="reference-features" aria-label="Our focus areas">
+  <div class="container">
+
+    <h2 class="reference-features-title">Our Values</h2>
+
+    <div class="reference-feature-grid">
+      <div class="reference-feature-item">
+        <div class="reference-feature-icon icon-yellow">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <div>
+          <h3>Health &amp; Wellness</h3>
+          <p>Promoting physical and mental well-being for individuals and families.</p>
         </div>
       </div>
-    </section>
+
+      <div class="reference-feature-item">
+        <div class="reference-feature-icon icon-green">
+          <i class="fa-solid fa-people-group"></i>
+        </div>
+        <div>
+          <h3>Community Support</h3>
+          <p>Providing help and resources to strengthen and uplift our community.</p>
+        </div>
+      </div>
+
+      <div class="reference-feature-item">
+        <div class="reference-feature-icon icon-blue">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <div>
+          <h3>Education &amp; Awareness</h3>
+          <p>Raising awareness and offering learning opportunities for a better tomorrow.</p>
+        </div>
+      </div>
+
+      <div class="reference-feature-item">
+        <div class="reference-feature-icon icon-sky">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+        <div>
+          <h3>Charitable Initiatives</h3>
+          <p>Serving those in need through charitable programs and compassionate action.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
     </div>
 
     <!-- Mission -->

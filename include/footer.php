@@ -19,18 +19,16 @@
 
         <div class="col-6 col-lg-2">
           <h4>Explore</h4>
-          <a href="#about">About Us</a>
-          <a href="#programs">Programs </a>
-          <a href="#events">Events</a>
-          <a href="#news">Our Team </a>
+          <a href="/about-us.php">About Us</a>
+          <a href="/program.php">Programs </a>
+          <a href="/event.php">Events</a>
+          <a href="/our-team.php">Our Team </a>
         </div>
 
         <div class="col-6 col-lg-2">
           <h4>Get Involved</h4>
-          <a href="#membership">Volunteer </a>
-          <a href="#volunteers">Donate </a>
-           <a href="#volunteers">Sponsors </a>
-          <a href="#sponsors">Contact Us </a>
+          <a href="/editorial.php">Editorial </a>
+          <a href="/contact-us.php">Contact Us </a>
         </div>
 
         <div class="col-lg-4">
@@ -38,7 +36,6 @@
           <p><i class="fa-regular fa-envelope"></i> info@vancouverbengaliclub.com </p>
            <p><i class="fa-regular fa-envelope"></i> treasurer@vancouverbengaliclub.com  </p>
           <p><i class="fa-solid fa-location-dot"></i> Vancouver, British Columbia</p>
-          <a class="footer-donate" href="#donate">Support Our Mission <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 

@@ -3890,3 +3890,9 @@ body{background:#fbfaf3;color:var(--vb-ink)}
     }
 
 }
+.reference-features-title {
+    text-align: center;
+    margin: 0 0 35px;
+    font-size: 36px;
+    font-weight: 700;
+}

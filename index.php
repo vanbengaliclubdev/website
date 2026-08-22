@@ -111,7 +111,7 @@
     <section class="section-padding mission-section" id="about">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-5">
+          <div class="col-lg-6">
             <h2 class="section-title">A community where everyone can <em>thrive.</em></h2>
             <div class="accent-rule"></div>
             <p class="section-text">
@@ -120,7 +120,7 @@
             <a href="about-us.php" class="text-link">Learn more about VBCCS <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <div class="col-lg-7">
+          <div class="col-lg-6">
           <img src="/assets/imag-1.jpeg" alt="" class="w-100 rounded">
           </div>
         </div>

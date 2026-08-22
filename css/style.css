@@ -685,7 +685,7 @@ body{background:#fbfaf3;color:var(--vb-ink)}
 .top-strip{display:none!important}
 .hero-shell{
   position:relative;
-  background-image:url('../assets/back.jpg');
+  background-image:url('../assets/hero-background.jpg');
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center top;

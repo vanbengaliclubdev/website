@@ -170,7 +170,7 @@
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
-            <article class="program-card featured new-featureddsa">
+            <article class="program-card featured">
               <div class="program-icon"><i class="fa-solid fa-heart-pulse"></i></div>
               <h3>Youth Wellness & Support </h3>
               <p>Promoting healthier lifestyles, well-being and practical health awareness across our community.</p>

@@ -39,7 +39,7 @@
         <div class="row align-items-center g-0">
           <div class="col-lg-6">
             <div class="hero-copy">
-              <h1 class="hero-title">BBuilding a<br>Healthier, Stronger<br>CCommunity</h1>
+              <h1 class="hero-title">Building a<br>Healthier, Stronger<br>Community</h1>
               <div class="hero-actions">
                 <a class="btn btn-brand hero-btn" href="#programs">Our Programs <i class="fa-solid fa-arrow-right"></i></a>
                 <a class="btn btn-outline-brand hero-btn" href="#volunteers">Get Involved <i class="fa-solid fa-arrow-right"></i></a>

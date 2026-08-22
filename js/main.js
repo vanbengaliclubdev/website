@@ -90,6 +90,62 @@ document.addEventListener("DOMContentLoaded", () => {
       heroArt.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     }, { passive: true });
   }
+
+  // Auto-scrolling board-member row
+  const leadershipTrack = document.getElementById("leadershipCards");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (leadershipTrack && !reducedMotion) {
+    let leadershipTimer;
+    let restartTimer;
+
+    const stopLeadershipScroll = () => {
+      window.clearInterval(leadershipTimer);
+      window.clearTimeout(restartTimer);
+    };
+
+    const advanceLeadershipScroll = () => {
+      const firstCard = leadershipTrack.querySelector(".leadership-item");
+      if (!firstCard) return;
+
+      const gap = Number.parseFloat(getComputedStyle(leadershipTrack).gap) || 0;
+      const step = firstCard.getBoundingClientRect().width + gap;
+      const maxScroll = leadershipTrack.scrollWidth - leadershipTrack.clientWidth;
+      const atEnd = leadershipTrack.scrollLeft >= maxScroll - 4;
+
+      leadershipTrack.scrollTo({
+        left: atEnd ? 0 : Math.min(leadershipTrack.scrollLeft + step, maxScroll),
+        behavior: "smooth"
+      });
+    };
+
+    const startLeadershipScroll = () => {
+      stopLeadershipScroll();
+      leadershipTimer = window.setInterval(advanceLeadershipScroll, 3000);
+    };
+
+    const restartLeadershipScroll = () => {
+      stopLeadershipScroll();
+      restartTimer = window.setTimeout(startLeadershipScroll, 3000);
+    };
+
+    leadershipTrack.addEventListener("mouseenter", stopLeadershipScroll);
+    leadershipTrack.addEventListener("mouseleave", startLeadershipScroll);
+    leadershipTrack.addEventListener("focusin", stopLeadershipScroll);
+    leadershipTrack.addEventListener("focusout", (event) => {
+      if (!leadershipTrack.contains(event.relatedTarget)) startLeadershipScroll();
+    });
+    leadershipTrack.addEventListener("pointerdown", stopLeadershipScroll);
+    leadershipTrack.addEventListener("pointerup", restartLeadershipScroll);
+    leadershipTrack.addEventListener("pointercancel", restartLeadershipScroll);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopLeadershipScroll();
+      else startLeadershipScroll();
+    });
+
+    startLeadershipScroll();
+  }
 });
 
 // =====================================================

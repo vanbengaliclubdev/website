@@ -22,7 +22,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260822-team-advisors">
  
 <meta name="google-site-verification" content="5xd1G8DWltGPUepQ8jtwE6M8jKU-bswsebDTytv7ZGU" />
  
@@ -226,13 +226,12 @@
               </div>
             </div>
             <div class="col-lg-7">
-              <div class="section-kicker">A Message From Our President</div>
-              <h2 class="section-title text-white">Together, we can make community service <em style="color:#fcdb1a;">stronger.</em></h2>
+              <div class="section-kicker">Message from the President</div>
+              <h2 class="section-title text-white">Compassion in Action. <em style="color:#fcdb1a;">Community with Purpose.</em></h2>
               <div class="quote-mark">“</div>
               <p class="president-copy">
-                Placeholder for the President's welcome message. This space will introduce
-                the heart of VBCCS, our commitment to community service and the shared vision
-                that brings members, volunteers and partners together.
+                Together, we advance health, dignity, and well being through meaningful community service,
+                creating opportunities, extending support, and ensuring that no one is left behind.
               </p>
               <div class="signature-line">
                 <strong>President, VBCCS</strong>
@@ -250,32 +249,49 @@
         <div class="text-center section-heading">
           <!--<div class="section-kicker">Our Leadership</div>-->
           <h2 class="section-title">Our  <em>Team</em></h2>
-          <p class="section-subtitle">Professional profile cards are ready for board photos, biographies and official emails.</p>
         </div>
 
-        <div class="row g-4 mt-2" id="leadershipCards">
-          <div class="col-sm-6 col-lg-3">
+        <div class="leadership-track" id="leadershipCards" aria-label="Board members" tabindex="0">
+          <div class="leadership-item">
             <article class="leader-card">
-              <div class="leader-photo"><img src="assets/avijit-das.jpeg" class="w-100" alt=""></div>
-              <div class="leader-info"><h3>Avijit </h3><span>President</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+              <div class="leader-photo leader-photo--portrait leader-photo--avijit"><img src="assets/avijit-das.jpeg" class="w-100" alt="Avijit Das"></div>
+              <div class="leader-info"><h3>Avijit Das</h3><span>President</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="leadership-item">
             <article class="leader-card">
-              <div class="leader-photo"><i class="fa-solid fa-user"></i></div>
-              <div class="leader-info"><h3>Board Member</h3><span>Vice President</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+              <div class="leader-photo leader-photo--portrait"><img src="assets/sayak-ray.jpeg" alt="Sayak Ray"></div>
+              <div class="leader-info"><h3>Sayak Ray</h3><span>Vice-President</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="leadership-item">
             <article class="leader-card">
-              <div class="leader-photo"><i class="fa-solid fa-user"></i></div>
-              <div class="leader-info"><h3>Board Member</h3><span>Secretary</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+              <div class="leader-photo"><img src="assets/anunay-chakraborty.jpeg" alt="Anunay Chakraborty"></div>
+              <div class="leader-info"><h3>Anunay Chakraborty</h3><span>Secretary</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="leadership-item">
             <article class="leader-card">
-              <div class="leader-photo"><i class="fa-solid fa-user"></i></div>
-              <div class="leader-info"><h3>Board Member</h3><span>Treasurer</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+              <div class="leader-photo"><img src="assets/saptarshi-mallick.jpeg" alt="Saptarshi Mallick"></div>
+              <div class="leader-info"><h3>Saptarshi Mallick</h3><span>Treasurer</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+            </article>
+          </div>
+          <div class="leadership-item">
+            <article class="leader-card">
+              <div class="leader-photo leader-photo--portrait"><img src="assets/sanjiban-das.jpeg" alt="Sanjiban Das"></div>
+              <div class="leader-info"><h3>Sanjiban Das</h3><span>Director of Events</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+            </article>
+          </div>
+          <div class="leadership-item">
+            <article class="leader-card">
+              <div class="leader-photo leader-photo--portrait"><img src="assets/indrajit-mitra.jpeg" alt="Indrajit Mitra"></div>
+              <div class="leader-info"><h3>Indrajit Mitra</h3><span>Director of Media &amp; Technology</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
+            </article>
+          </div>
+          <div class="leadership-item">
+            <article class="leader-card">
+              <div class="leader-photo leader-photo--portrait"><img src="assets/amit-sarkar.jpeg" alt="Amit Sarkar"></div>
+              <div class="leader-info"><h3>Amit Sarkar</h3><span>Director of Operations &amp; Logistics</span><a href="mailto:info@example.com"><i class="fa-regular fa-envelope"></i></a></div>
             </article>
           </div>
         </div>
@@ -286,9 +302,11 @@
             <h3>Guidance with purpose.</h3>
             <p>Our Advisory Board provides strategic guidance and experience to help VBCCS grow its community impact.</p>
           </div>
-          <div class="advisory-person"><i class="fa-solid fa-user-shield"></i><span>Advisor Profile</span></div>
-          <div class="advisory-person"><i class="fa-solid fa-user-shield"></i><span>Advisor Profile</span></div>
-          <div class="advisory-person"><i class="fa-solid fa-user-shield"></i><span>Advisor Profile</span></div>
+          <div class="advisory-person"><div class="advisor-photo advisor-photo--aranyav"><img src="assets/aranyav-ganguly.jpeg" alt="Aranyav Ganguly"></div><span>Aranyav Ganguly</span><small>Board Advisor</small></div>
+          <div class="advisory-person"><div class="advisor-photo advisor-photo--bishu"><img src="assets/bishu-debdas.jpeg" alt="Bishu Debdas"></div><span>Bishu Debdas</span><small>Board Advisor</small></div>
+          <div class="advisory-person"><i class="fa-solid fa-user-shield"></i><span>Ashit Burman</span><small>Board Advisor</small></div>
+          <div class="advisory-person"><div class="advisor-photo advisor-photo--syed"><img src="assets/syed-ahmed.jpeg" alt="Syed Ahmed"></div><span>Syed Ahmed</span><small>Board Advisor</small></div>
+          <div class="advisory-person"><i class="fa-solid fa-user-shield"></i><span>Saurav Purkayastha</span><small>Board Advisor</small></div>
         </div>
       </div>
     </section>

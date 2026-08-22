@@ -571,7 +571,7 @@
           <div class="col-lg-6">
             <div class="volunteer-visual">
               <div class="volunteer-circle">
-                <img src="/images/Volunteers-are-the-heart-of-VBCCS.png" alt="" class="w-100">
+                <img src="/assets/images/Volunteers-are-the-heart-of-VBCCS.png" alt="" class="w-100">
               </div>
               <div class="mini-card mc-one"><i class="fa-solid fa-hand-holding-heart"></i><span>Serve</span></div>
               <div class="mini-card mc-two"><i class="fa-solid fa-people-arrows"></i><span>Connect</span></div>

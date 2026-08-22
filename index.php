@@ -121,7 +121,7 @@
           </div>
 
           <div class="col-lg-6">
-          <img src="/assets/imag-1.jpeg" alt="" class="w-100 rounded">
+          <img src="/assets/A-community-where-everyone-can-thrive.jpg" alt="" class="w-100 rounded">
           </div>
         </div>
       </div>

@@ -39,9 +39,10 @@
         <div class="row align-items-center g-0">
           <div class="col-lg-6">
             <div class="hero-copy">
-              <h1 class="hero-title">Building a<br>Healthier, Stronger<br>Community</h1>
+              <h1 class="hero-title">Striving for a<br>healthier, inclusive,<br>and involved community</h1>
+              <p class="hero-lead">Forging connections and community by creating opportunities for wellness and support</p>
               <div class="hero-actions">
-                <a class="btn btn-brand hero-btn" href="#programs">Our Programs <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="btn btn-brand hero-btn" href="#programs">Our Ventures <i class="fa-solid fa-arrow-right"></i></a>
                 <a class="btn btn-outline-brand hero-btn" href="#volunteers">Get Involved <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
@@ -59,7 +60,7 @@
   <section class="reference-features" aria-label="Our focus areas">
   <div class="container">
 
-    <h2 class="reference-features-title">Our Values</h2>
+    <h2 class="reference-features-title">Ethos Guiding Us</h2>
 
     <div class="reference-feature-grid">
       <div class="reference-feature-item">
@@ -68,7 +69,7 @@
         </div>
         <div>
           <h3>Health &amp; Wellness</h3>
-          <p>Promoting physical and mental well-being for individuals and families.</p>
+          <p>Positively impacting and enhancing the mental, physical, and emotional well-being of the community</p>
         </div>
       </div>
 
@@ -78,7 +79,7 @@
         </div>
         <div>
           <h3>Community Support</h3>
-          <p>Providing help and resources to strengthen and uplift our community.</p>
+          <p>Providing resources and ventures to grow and strengthen the community</p>
         </div>
       </div>
 

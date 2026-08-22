@@ -34,14 +34,14 @@
           <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="editorial.php">Editorial</a></li>
           
-          <li class="nav-item"><a class="nav-link" href="program.php">Our Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="program.php">Ongoing Ventures</a></li>
           <li class="nav-item"><a class="nav-link" href="event.php">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="our-team.php">
           Our Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.php">Talk to Us</a></li>
           <li class="nav-item ms-xl-2">
             <a class="btn btn-brand btn-sm px-4" href="donate.php">
-              <i class="fa-solid fa-heart me-2"></i>Donate
+              <i class="fa-solid fa-heart me-2"></i>Make A Difference
             </a>
           </li>
         </ul>
@@ -66,14 +66,14 @@
         <a href="/"><i class="fa-solid fa-house"></i> Home</a>
         <a href="about-us.php"><i class="fa-solid fa-people-group"></i> About Us</a>
         <a href="editorial.php"><i class="fa-solid fa-bullseye"></i> Editorial</a>
-        <a href="our-programs"><i class="fa-regular fa-newspaper"></i> Our Programs</a>
+        <a href="our-programs"><i class="fa-regular fa-newspaper"></i> Ongoing Ventures</a>
         <a href="events.php"><i class="fa-regular fa-images"></i> Events</a>
         <a href="our-team.php"><i class="fa-solid fa-handshake"></i> Our Team</a>
-        <a href="contact-us.php"><i class="fa-regular fa-envelope"></i> Contact</a>
+        <a href="contact-us.php"><i class="fa-regular fa-envelope"></i> Talk to Us</a>
       </div>
       <div class="mobile-cta">
         <a href="donate.php" class="btn btn-brand w-100">
-          <i class="fa-solid fa-hand-holding-heart me-2"></i> Support VBCCS
+          <i class="fa-solid fa-hand-holding-heart me-2"></i> Make A Difference
         </a>
       </div>
     </div>

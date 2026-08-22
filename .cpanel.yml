@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/vascoshospitality/web.vancouverbengaliclub.com/
-    - /usr/bin/find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec /bin/cp -R {} "$DEPLOYPATH" \;
+    - export DEPLOYPATH=/home4/vancouverbengali/web.vancouverbengaliclub.com/
+    - /usr/bin/find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec /bin/cp -R {} $DEPLOYPATH \;
